@@ -1,5 +1,10 @@
-import './styles.css';
+import './App.css'
+import { ToDoWrapper } from './components/ToDoWrapper'
 
 export default function App() {
-  return "Hello world"
+  return (
+    <div className='App'>
+      <ToDoWrapper />
+    </div>
+  )
 }
