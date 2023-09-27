@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-export const ToDo = ({ task,toggleComplete,deleteToDos }) => {
+export const ToDo = ({ task,toggleComplete,deleteToDos,editToDo }) => {
   return (
     <div className='Todo'>
       <p
@@ -11,10 +11,9 @@ export const ToDo = ({ task,toggleComplete,deleteToDos }) => {
         className={`${task.completed ? 'completed': ""}`
         }> { task.task }</p>
       <div>
-        <FontAwesomeIcon icon={faPenToSquare} />
-        <FontAwesomeIcon icon={faTrash} onClick={() => deleteToDos(task.id)}/>
+        <FontAwesomeIcon icon={faPenToSquare} onClick={() => editToDo(task.id)} />
+        <FontAwesomeIcon icon={faTrash} onClick={() => deleteToDos(task.id)} />
       </div>
     </div>
-
   )
 }
